@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/Servicebox/mesto-react.git/static/css/main.01ab1fd7.css",
+    "main.js": "/Servicebox/mesto-react.git/static/js/main.859942ee.js",
+    "static/js/787.5530211c.chunk.js": "/Servicebox/mesto-react.git/static/js/787.5530211c.chunk.js",
+    "static/media/Inter-Medium.woff": "/Servicebox/mesto-react.git/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
+    "static/media/Inter-Black.woff": "/Servicebox/mesto-react.git/static/media/Inter-Black.c6938660eec019fefd68.woff",
+    "static/media/Inter-Medium.woff2": "/Servicebox/mesto-react.git/static/media/Inter-Medium.293fd13dbca5a3e450ef.woff2",
+    "static/media/Inter-Black.woff2": "/Servicebox/mesto-react.git/static/media/Inter-Black.15ca31c0a2a68f76d2d1.woff2",
+    "static/media/Inter-Regular.woff": "/Servicebox/mesto-react.git/static/media/Inter-Regular.18e38f809f5b0c836ab5.woff",
+    "static/media/Inter-Regular.woff2": "/Servicebox/mesto-react.git/static/media/Inter-Regular.5e10e89c734541a9b42e.woff2",
+    "static/media/logo.svg": "/Servicebox/mesto-react.git/static/media/logo.03b78ada3425e9132ff3db7ea8f4a6f6.svg",
+    "static/media/like.svg": "/Servicebox/mesto-react.git/static/media/like.87ed371465c7a6a1cd01.svg",
+    "index.html": "/Servicebox/mesto-react.git/index.html",
+    "static/media/card-del.svg": "/Servicebox/mesto-react.git/static/media/card-del.cbc09a894bdd4c956365.svg",
+    "static/media/like-active.svg": "/Servicebox/mesto-react.git/static/media/like-active.e787eeb70bb65b7b453a.svg",
+    "static/media/edit.svg": "/Servicebox/mesto-react.git/static/media/edit.a1892ea72cb87c8fc3aa.svg",
+    "static/media/pencil.svg": "/Servicebox/mesto-react.git/static/media/pencil.8667ac4a523e8fc42e59.svg",
+    "static/media/close.svg": "/Servicebox/mesto-react.git/static/media/close.2ceb783afbab75916ddc.svg",
+    "static/media/krest.svg": "/Servicebox/mesto-react.git/static/media/krest.d86bb2edc2f6eadb96b7.svg",
+    "static/media/close_small.svg": "/Servicebox/mesto-react.git/static/media/close_small.b793e07c3f4c19e26c11.svg",
+    "main.01ab1fd7.css.map": "/Servicebox/mesto-react.git/static/css/main.01ab1fd7.css.map",
+    "main.859942ee.js.map": "/Servicebox/mesto-react.git/static/js/main.859942ee.js.map",
+    "787.5530211c.chunk.js.map": "/Servicebox/mesto-react.git/static/js/787.5530211c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.01ab1fd7.css",
+    "static/js/main.859942ee.js"
+  ]
+}
