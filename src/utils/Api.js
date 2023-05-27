@@ -4,7 +4,6 @@ class Api {
     this._headers = config.headers;
   }
 
-  //проверка
   _getResponseData(res) {
     if (res.ok) {
       return res.json();
@@ -12,79 +11,67 @@ class Api {
     return Promise.reject(`Ошибка: ${res.status}`);
   }
 
+  // универсальный метод проверки
+  _request(path, method, data) {
+    let body = data;
+    if((method === 'PATCH' || method === 'POST') && data) {
+      body = JSON.stringify(data);
+    }
+    return fetch(this._url + path, {
+      method,
+      headers: this._headers,
+      body,
+    })
+    .then(this._getResponseData);
+  }
+
   //получим информацию о пользователе
   getUserInfoApi() {
-    return fetch(`${this._url}/users/me`, {
-      headers: this._headers,
-    }).then(this._getResponseData)
+    return this._request(`/users/me`, 'GET')
   }
 
   //обновим информацию пользователя
   editUserInfo(data) {
-    return fetch(`${this._url}/users/me`, {
-      method: 'PATCH',
-      headers: this._headers,
-      body: JSON.stringify({
-        name: data.name,
-        about: data.job,
-      }),
-    }).then(this._getResponseData)
+    return this._request(`/users/me`, 'PATCH', data)
   }
 
   //обновим аватар пользователя
   editUserAvatar(data) {
-    return fetch(`${this._url}/users/me/avatar`, {
-      method: 'PATCH',
-      headers: this._headers,
-      body: JSON.stringify({
-        avatar: data.link,
-      }),
-    }).then(this._getResponseData)
+    return this._request(`/users/me/avatar`, 'PATCH', data)
   }
 
   //получим карточки
   getInitialCards() {
-    return fetch(`${this._url}/cards`, {
-      headers: this._headers,
-    }).then(this._getResponseData)
+    return this._request(`/cards`, 'GET')
   }
 
   //добавим новую карточку
-  addCards(data){
-    return fetch(`${this._url}/cards`, {
-      method: 'POST',
-      headers: this._headers,
-      body: JSON.stringify({
-        name: data.name,
-        link: data.link,
-      }),
-    }).then(this._getResponseData)
+  addCards(data) {
+    return this._request(`/cards`, 'POST', data)
   }
 
   //удалим карточку
   removeCardApi(_id) {
-    return fetch(`${this._url}/cards/${_id}`, {
-      method: 'DELETE',
-      headers: this._headers,
-    }).then(this._getResponseData)
+    return this._request(`/cards/${_id}`, 'DELETE')
   }
 
   // поставим лайк карточке
   addCardLike(_id) {
-    return fetch(`${this._url}/cards/${_id}/likes`, {
-      method: 'PUT',
-      headers: this._headers,
-    }).then(this._getResponseData)
+    return this._request(`/cards/${_id}/likes`, 'PUT')
   }
 
   // удалим лайк с карточки
   removeCardLike(_id) {
-    return fetch(`${this._url}/cards/${_id}/likes`, {
-      method: 'DELETE',
-      headers: this._headers,
-    }).then(this._getResponseData)
+    return this._request(`/cards/${_id}/likes`, 'DELETE')
   }
 
+  toggleLikeCard(_id, isCardLiked) {
+    if (isCardLiked) {
+      return this._request(`/cards/${_id}/likes`, 'PUT');
+    } else {
+      return this._request(`/cards/${_id}/likes`, 'DELETE');
+    }
+  }
 }
 
 const api = new Api({
